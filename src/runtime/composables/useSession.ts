@@ -51,7 +51,7 @@ export default async (options: ComposableOptions = {
         session.value = data
 
         // If we are on the server, store session value in nuxt payload to avoid hydration issues
-        if (process.server) {
+        if (import.meta.server) {
           nuxt.payload.state[SESSION_VALUE_KEY] = data
         }
 
